@@ -7,7 +7,7 @@
   --card-foreground: #0f172a;
   --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --accent: #14b8a6;
+  --accent: #057467;
   --accent-foreground: #ffffff;
   --muted: #e2e8f0;
   --muted-foreground: #475569;
@@ -48,6 +48,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1,

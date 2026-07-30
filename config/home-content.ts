@@ -1,8 +1,8 @@
 export const homeHero = {
-  badge: "Built for Malaysian SMEs that need consistent leads",
-  title: "Get a premium website that earns trust and brings in more quote requests.",
+  badge: "We care about your business growth",
+  title: "Websites for   ",
   description:
-    "novanest designs and builds conversion-focused websites, SEO systems, and automation workflows for local businesses in Melaka and across Malaysia.",
+    "Delivering professional websites, search optimization, and smart automation to scale your business.",
   primaryCta: { label: "Get Free Quote", href: "/contact" },
   secondaryCta: { label: "View Portfolio", href: "/portfolio" },
   stats: [
