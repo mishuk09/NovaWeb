@@ -63,6 +63,7 @@ export const homeProcess = [
     title: "Launch & Growth",
     description: "Go-live support, analytics tracking, SEO iteration, and optimization loops.",
   },
+   
 ];
 
 export const homePortfolioPreview = [
