@@ -6,7 +6,7 @@ export const homeHero = {
   primaryCta: { label: "Get Free Quote", href: "/contact" },
   secondaryCta: { label: "View Portfolio", href: "/portfolio" },
   stats: [
-    { label: "Typical project launch", value: "7-21 Days" },
+    { label: "Typical project launch", value: "7-10 Days" },
     { label: "Response time", value: "Within 24 Hours" },
     { label: "Commitment", value: "No lock-in contract" },
   ],

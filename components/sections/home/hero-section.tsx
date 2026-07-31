@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { homeHero } from "@/config/home-content";
@@ -16,13 +17,24 @@ export function HeroSection() {
       <HeroNavbar />
       <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-primary/15 to-transparent" />
       <div className="absolute inset-0 -z-10 hidden bg-[url('/home.svg')] bg-cover bg-center bg-no-repeat  md:block" />
-      <Container className="grid pt-20 items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <Container className="grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeUp className="space-y-6">
           <p className="inline-flex      px-1  font-bold text-[var(--primary)]  ">
             {homeHero.badge} 
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            {homeHero.title} <span className="text-[var(--primary)]"> Growing</span>  Businesses
+            {homeHero.title}{" "}
+            <span className="relative inline-block text-[var(--primary)] align-baseline leading-none">
+              Growing
+              <Image
+                src="/uparrow.svg"
+                alt=""
+                width={40}
+                height={40}
+                className="absolute left-1/2 top-6 mt-1 h-auto w-70 -translate-x-1/2"
+              />
+            </span>{" "}
+            Businesses
           </h1>
           <p className="max-w-2xl text-lg text-muted-foreground">{homeHero.description}</p>
           <div className="flex flex-wrap gap-3">
@@ -49,17 +61,8 @@ export function HeroSection() {
           </div>
         </FadeUp>
         <FadeUp delay={0.1}>
-          <Card className="grid gap-4 rounded-3xl bg-white/75 p-8 bg-transparent dark:bg-slate-300/70">
-            {homeHero.stats.map((item) => (
-              <div key={item.label} className="rounded-xl bg-background/70   p-4">
-                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  {item.label}
-                </p>
-                <p className="mt-2 font-heading text-2xl font-semibold text-primary">
-                  {item.value}
-                </p>
-              </div>
-            ))}
+          <Card className="overflow-hidden  border-0 bg-transparent p-0 shadow-none backdrop-blur-0">
+           <img src="/home-img.svg" className="w-full h-full" alt="Hero Image"   />
           </Card>
         </FadeUp>
       </Container>

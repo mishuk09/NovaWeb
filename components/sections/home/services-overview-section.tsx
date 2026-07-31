@@ -8,14 +8,20 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ShortInfo } from "./short-info";
 
 export function ServicesOverviewSection() {
   return (
-    <Section id="services-overview">
-      <Container className="space-y-10">
+    <Section id="services-overview" className="relative overflow-visible mt-16  bg-gradient-to-b from-primary/5 to-transparent py-0">
+      <ShortInfo />
+      <Container className="space-y-10 pt-10">
         <SectionHeading
           eyebrow="Services"
-          title="Everything your business needs to launch, rank, and convert."
+          title={
+            <>
+              Everything your business needs to <span className="text-primary">launch</span>, rank, and convert.
+            </>
+          }
           description="From websites and SEO to automation and lead capture, we provide complete digital execution."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
