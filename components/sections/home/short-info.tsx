@@ -7,9 +7,9 @@ import { homeHero } from "@/config/home-content";
 
 const statIcons = [BadgeCheck, Clock3, ShieldCheck];
 const iconStyles = [
-  "bg-green-500/10 text-green-600 ring-green-500/15",
+  "bg-primary/10 text-primary ring-primary/15",
   "bg-accent/10 text-accent ring-accent/15",
-  "bg-emerald-500/10 text-emerald-600 ring-emerald-500/15",
+  "bg-primary/10 text-primary ring-primary/15",
 ];
 
 export function ShortInfo() {
@@ -17,7 +17,7 @@ export function ShortInfo() {
     <div className="relative z-20 -mt-20 mb-8 md:-mt-40 md:mb-10">
       <Container>
         <FadeUp delay={0.1}>
-          <Card className="overflow-hidden rounded-lg border border-border/40 bg-white p-0 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:bg-slate-950/80">
+          <Card className="overflow-hidden rounded-lg border border-border/40 bg-card p-0 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:bg-slate-950/80">
             {/* <div className="h-1 bg-gradient-to-r from-primary/70 via-primary to-accent" /> */}
             <div className="grid divide-y   md:grid-cols-3 md:divide-x md:divide-y-0">
               {homeHero.stats.map((item, index) => {
