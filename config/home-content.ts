@@ -117,19 +117,32 @@ export const homePortfolioPreview = [
   },
 ];
 
-export const homeIndustries = [
-  "Restaurant",
-  "Cafe",
-  "Hotel",
-  "Homestay",
-  "Workshop",
-  "Salon",
-  "Dental Clinic",
-  "Law Firm",
-  "Construction",
-  "Property",
-  "Education",
-  "Retail",
+import type { LucideIcon } from "lucide-react";
+import {
+  Building2,
+  GraduationCap,
+  HeartPulse,
+  Home,
+  Landmark,
+  Pizza,
+  Store,
+  UtensilsCrossed,
+  Wrench,
+} from "lucide-react";
+
+export const homeIndustries: Array<{ name: string; icon: LucideIcon }> = [
+  { name: "Restaurant", icon: UtensilsCrossed },
+  { name: "Cafe", icon: Pizza },
+  { name: "Hotel", icon: Building2 },
+  { name: "Homestay", icon: Home },
+  { name: "Workshop", icon: Wrench },
+  { name: "Salon", icon: Scissors},
+  { name: "Dental Clinic", icon: HeartPulse },
+  { name: "Law Firm", icon: Landmark },
+  { name: "Construction", icon: Pizza },
+  { name: "Property", icon: Building2 },
+  { name: "Education", icon: GraduationCap },
+  { name: "Retail", icon: Store },
 ];
 
 export const homePricing = [

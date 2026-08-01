@@ -25,12 +25,27 @@ export default function IndustriesPage() {
       />
       <Section className="pt-2">
         <Container className="space-y-8">
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {homeIndustries.map((industry) => (
-              <Card key={industry} className="rounded-xl py-4 text-center">
-                <h2 className="font-medium">{industry}</h2>
-              </Card>
-            ))}
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {homeIndustries.map((industry) => {
+              const Icon = industry.icon;
+
+              return (
+                <Card
+                  key={industry.name}
+                  className="rounded-2xl border-border/60 bg-card/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h2 className="font-semibold text-foreground">{industry.name}</h2>
+                      <p className="text-sm text-muted-foreground">Custom growth-focused solution</p>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
           <div className="flex justify-center">
             <Button asChild size="lg">
