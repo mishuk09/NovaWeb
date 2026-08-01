@@ -125,24 +125,32 @@ import {
   Home,
   Landmark,
   Pizza,
+  Building,
+  Scissors,
   Store,
   UtensilsCrossed,
   Wrench,
 } from "lucide-react";
 
-export const homeIndustries: Array<{ name: string; icon: LucideIcon }> = [
-  { name: "Restaurant", icon: UtensilsCrossed },
-  { name: "Cafe", icon: Pizza },
-  { name: "Hotel", icon: Building2 },
-  { name: "Homestay", icon: Home },
-  { name: "Workshop", icon: Wrench },
-  { name: "Salon", icon: Scissors},
-  { name: "Dental Clinic", icon: HeartPulse },
-  { name: "Law Firm", icon: Landmark },
-  { name: "Construction", icon: Pizza },
-  { name: "Property", icon: Building2 },
-  { name: "Education", icon: GraduationCap },
-  { name: "Retail", icon: Store },
+export type HomeIndustry = {
+  name: string;
+  icon: LucideIcon;
+  image?: string;
+};
+
+export const homeIndustries: HomeIndustry[] = [
+  { name: "Restaurant", icon: UtensilsCrossed, image: "/resturant.svg" },
+  { name: "Cafe", icon: Pizza, image: "/cafe.svg" },
+  { name: "Hotel", icon: Building2, image: "/hotel.svg" },
+  { name: "Homestay", icon: Home, image: "/homestay.svg" },
+  { name: "Workshop", icon: Wrench, image: "/workshop.svg" },
+  { name: "Salon", icon: Scissors, image: "/salon.svg" },
+  { name: "Dental Clinic", icon: HeartPulse, image: "/dental.svg" },
+  { name: "Law Firm", icon: Landmark, image: "/law.svg" },
+  { name: "Construction", icon: Building, image: "/construction.svg" },
+  { name: "Property", icon: Building2, image: "/property.svg" },
+  { name: "Education", icon: GraduationCap, image: "/education.svg" },
+  { name: "Retail", icon: Store, image: "/retail.svg" },
 ];
 
 export const homePricing = [
