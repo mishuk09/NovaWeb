@@ -24,11 +24,13 @@ export const homeServicesOverview = [
 export const homeWhyChooseUs = [
   {
     title: "Conversion-first UI/UX",
-    description: "Every page is structured to build trust, reduce friction, and increase leads.",
+    description:
+      "Every page is structured to build trust, reduce friction, and increase leads.",
   },
   {
     title: "Clear process and timeline",
-    description: "No ambiguity: defined scope, milestones, communication, and deliverables.",
+    description:
+      "No ambiguity: defined scope, milestones, communication, and deliverables.",
   },
   {
     title: "SEO and local discovery built-in",
@@ -46,31 +48,35 @@ export const homeProcess = [
   {
     step: "01",
     title: "Discovery",
-    description: "We understand your goals, audience, offers, and business constraints.",
+    description:
+      "We understand your goals, audience, offers, and business constraints.",
   },
   {
     step: "02",
     title: "Strategy & Wireframe",
-    description: "We define information architecture, content flow, and conversion strategy.",
+    description:
+      "We define information architecture, content flow, and conversion strategy.",
   },
   {
     step: "03",
     title: "Design & Development",
-    description: "Modern, responsive UI with scalable code and performance-safe implementation.",
+    description:
+      "Modern, responsive UI with scalable code and performance-safe implementation.",
   },
   {
     step: "04",
     title: "Launch & Growth",
-    description: "Go-live support, analytics tracking, SEO iteration, and optimization loops.",
+    description:
+      "Go-live support, analytics tracking, SEO iteration, and optimization loops.",
   },
-   
 ];
 
 export const homePortfolioPreview = [
   {
     name: "Nusa Dining",
     industry: "Restaurant",
-    description: "Online reservations and menu showcase with local SEO landing pages.",
+    description:
+      "Online reservations and menu showcase with local SEO landing pages.",
     image: "/images/portfolio/restaurant.svg",
     stack: ["Next.js", "Tailwind", "SEO"],
     demoHref: "/contact",
@@ -78,7 +84,8 @@ export const homePortfolioPreview = [
   {
     name: "Aurea Salon",
     industry: "Salon",
-    description: "Service catalogue and WhatsApp booking flow for appointment conversion.",
+    description:
+      "Service catalogue and WhatsApp booking flow for appointment conversion.",
     image: "/images/portfolio/salon.svg",
     stack: ["Next.js", "Framer Motion", "WhatsApp"],
     demoHref: "/contact",
@@ -86,7 +93,8 @@ export const homePortfolioPreview = [
   {
     name: "ProTorque Workshop",
     industry: "Workshop",
-    description: "Service lead capture and Google Business Profile optimization support.",
+    description:
+      "Service lead capture and Google Business Profile optimization support.",
     image: "/images/portfolio/workshop.svg",
     stack: ["Next.js", "Analytics", "Automation"],
     demoHref: "/contact",
@@ -94,7 +102,8 @@ export const homePortfolioPreview = [
   {
     name: "Klinik Harmoni",
     industry: "Clinic",
-    description: "Doctor profile, treatment information, and lead-ready contact funnels.",
+    description:
+      "Doctor profile, treatment information, and lead-ready contact funnels.",
     image: "/images/portfolio/clinic.svg",
     stack: ["Next.js", "Accessibility", "SEO"],
     demoHref: "/contact",
@@ -102,7 +111,8 @@ export const homePortfolioPreview = [
   {
     name: "LexBridge Partners",
     industry: "Law Firm",
-    description: "Authority-focused brand site with consultation call-to-action architecture.",
+    description:
+      "Authority-focused brand site with consultation call-to-action architecture.",
     image: "/images/portfolio/law-firm.svg",
     stack: ["Next.js", "Schema", "Content Strategy"],
     demoHref: "/contact",
@@ -110,7 +120,8 @@ export const homePortfolioPreview = [
   {
     name: "HarborLight Suites",
     industry: "Hotel",
-    description: "Room showcase with inquiry capture and trust-focused social proof blocks.",
+    description:
+      "Room showcase with inquiry capture and trust-focused social proof blocks.",
     image: "/images/portfolio/hotel.svg",
     stack: ["Next.js", "UI/UX", "Performance"],
     demoHref: "/contact",
@@ -216,7 +227,8 @@ export const homePricing = [
   {
     name: "Custom",
     price: "Custom Quote",
-    subtitle: "Need something different? We can create a custom solution for your business.",
+    subtitle:
+      "Need something different? We can create a custom solution for your business.",
     features: [
       "E-commerce",
       "AI Chatbot",
@@ -247,6 +259,36 @@ export const homeTestimonials = [
     role: "Workshop Director",
     quote:
       "novanest gave us a clear roadmap and delivered exactly on timeline. Very reliable team.",
+  },
+  {
+    name: "Aisyah Rahman",
+    role: "Clinic Manager",
+    quote:
+      "We finally have a polished site that makes patients feel confident before they contact us.",
+  },
+  {
+    name: "Hafiz Tan",
+    role: "Retail Founder",
+    quote:
+      "The team made everything simple. Our product inquiries and credibility both improved quickly.",
+  },
+  {
+    name: "Nurul Iman",
+    role: "Property Consultant",
+    quote:
+      "The layout is clean, fast, and focused on leads. It matches how we want to present the business.",
+  },
+  {
+    name: "Jason Khoo",
+    role: "Hotel Operations Lead",
+    quote:
+      "The site now feels premium and trustworthy, and our guest enquiries are easier to handle.",
+  },
+  {
+    name: "Mei Ling Koh",
+    role: "Education Centre Principal",
+    quote:
+      "They translated our requirements into a clear website that parents and students can navigate easily.",
   },
 ];
 

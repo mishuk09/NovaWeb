@@ -6,6 +6,9 @@ type SectionHeadingProps = {
   title: React.ReactNode; // Changed to ReactNode to allow inline styles like <span>
   description?: React.ReactNode;
   className?: string;
+  eyebrowClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 };
 
 export function SectionHeading({
@@ -13,25 +16,42 @@ export function SectionHeading({
   title,
   description,
   className,
+  eyebrowClassName,
+  titleClassName,
+  descriptionClassName,
 }: SectionHeadingProps) {
   return (
     <div className={cn("mx-auto max-w-3xl space-y-4 text-center", className)}>
       {eyebrow ? (
         <div className="flex items-center justify-center gap-3">
           <span className="h-[4px] w-16 bg-primary" />
-          <span className="  font-bold text-primary uppercase tracking-wider">
+          <span
+            className={cn("font-bold uppercase tracking-wider text-primary", eyebrowClassName)}
+          >
             {eyebrow}
           </span>
           <span className="h-[4px] w-16 bg-primary" />
         </div>
       ) : null}
       
-      <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+      <h2
+        className={cn(
+          "font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl",
+          titleClassName,
+        )}
+      >
         {title}
       </h2>
       
       {description ? (
-        <p className="text-base text-muted-foreground md:text-lg">{description}</p>
+        <p
+          className={cn(
+            "text-base text-muted-foreground md:text-lg",
+            descriptionClassName,
+          )}
+        >
+          {description}
+        </p>
       ) : null}
     </div>
   );

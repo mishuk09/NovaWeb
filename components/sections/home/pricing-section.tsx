@@ -55,7 +55,7 @@ export function PricingSection() {
   const customPackage = homePricing[3];
 
   return (
-    <Section id="pricing" className="relative overflow-hidden bg-background">
+    <Section id="pricing" className="relative overflow-hidden b`g-background">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute right-[-7rem] bottom-[-5rem] h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
@@ -187,8 +187,7 @@ export function PricingSection() {
         </div>
       </Container>
 
-      <Card className="relative overflow-hidden  mt-20  bg-gradient-to-br from-[#3b12a8] via-[#4d25ce] to-[#280c7a] px-6 py-12 shadow-2xl md:px-12 md:py-16">
-        {/* Abstract Background Watermark (mimicking the hexagon from the image) */}
+      {/* <Card className="relative overflow-hidden  mt-20  bg-gradient-to-br from-[#3b12a8] via-[#4d25ce] to-[#280c7a] px-6 py-12 shadow-2xl md:px-12 md:py-16">
         <div className="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 opacity-10">
           <svg
             width="350"
@@ -211,7 +210,6 @@ export function PricingSection() {
         </div>
 
         <div className="relative z-10 flex flex-col gap-16 md:flex-row md:items-center md:justify-between lg:gap-8">
-          {/* Left Content Column */}
           <div className="flex-1 space-y-6 md:max-w-xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/70">
               Need Something Different?
@@ -226,7 +224,6 @@ export function PricingSection() {
               solutions? Our team is here to help you transform.
             </p>
 
-            {/* Email Input & CTA Bar */}
             <div className="mt-8 flex w-full  items-center rounded-lg bg-white p-1.5 shadow-xl">
             
               <Button
@@ -244,9 +241,7 @@ export function PricingSection() {
             </div>
           </div>
 
-          {/* Right Image & Floating Badges Column */}
           <div className="relative flex min-h-[350px] flex-1 items-center justify-center md:justify-end">
-            {/* Floating Feature Badges */}
             <div className="absolute left-0 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-4">
               {customPackage.features.map((feature, index) => (
                 <div
@@ -263,7 +258,6 @@ export function PricingSection() {
               ))}
             </div>
 
-            {/* Hero Image */}
             <img
               src="https://www.virtualpbx.com/wp-content/uploads/2021/10/Improve-Microsoft-Teams-Call-Performance.png"
               alt="IT Expert"
@@ -271,7 +265,7 @@ export function PricingSection() {
             />
           </div>
         </div>
-      </Card>
+      </Card> */}
     </Section>
   );
 }
