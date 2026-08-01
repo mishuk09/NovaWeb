@@ -19,6 +19,14 @@ export function IndustriesSection() {
           {homeIndustries.map((industry, index) => {
             const Icon = industry.icon;
             const itemIndex = String(index + 1).padStart(2, "0");
+            const badgeClassName = [
+              "bg-emerald-500 shadow-emerald-500/20",
+              "bg-blue-500 shadow-blue-500/20",
+              "bg-violet-500 shadow-violet-500/20",
+              "bg-amber-500 shadow-amber-500/20",
+              "bg-rose-500 shadow-rose-500/20",
+              "bg-cyan-500 shadow-cyan-500/20",
+            ][index % 6];
 
             return (
               <FadeUp key={industry.name} delay={index * 0.03}>
@@ -35,15 +43,17 @@ export function IndustriesSection() {
                     ) : (
                       <Icon className="absolute left-1/2 top-1/2 z-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 text-emerald-500/18 dark:text-emerald-300/12" />
                     )}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-l from-black/80 via-black/50 to-black/10 dark:from-black/85 dark:via-black/60 dark:to-black/20" />
+                    <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/75 to-black/35 dark:from-black/95 dark:via-black/80 dark:to-black/45" />
                   </div>
 
-                  <span className="pointer-events-none absolute right-6 top-4 z-20 text-6xl font-semibold text-transparent opacity-80 [-webkit-text-stroke:1.5px_rgba(148,163,184,0.55)] dark:[-webkit-text-stroke:1.5px_rgba(148,163,184,0.35)]">
+                  <span className="pointer-events-none absolute right-6 top-4 z-20 text-6xl font-semibold text-transparent opacity-90 [-webkit-text-stroke:1.5px_rgba(226,232,240,0.9)] drop-shadow-[0_0_8px_rgba(255,255,255,0.18)] dark:[-webkit-text-stroke:1.5px_rgba(226,232,240,0.75)]">
                     {itemIndex}
                   </span>
 
                   <div className="relative z-20 flex h-full flex-col justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/15 text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105">
+                    <div
+                      className={`flex h-14 w-14 items-center justify-center rounded-xl text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105 ${badgeClassName}`}
+                    >
                       <Icon className="h-6 w-6" />
                     </div>
 
@@ -52,7 +62,7 @@ export function IndustriesSection() {
                         {industry.name}
                       </h3>
                       <p className="text-base leading-relaxed text-white/75">
-                        Tailored digital presence
+                        Custom digital experience built to attract and convert customers.
                       </p>
                     </div>
                   </div>
