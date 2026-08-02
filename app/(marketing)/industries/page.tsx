@@ -6,6 +6,9 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { createPageMetadata } from "@/lib/seo";
+import { PageHero } from "@/components/sections/common/page-hero";
+import Image from "next/image";
+import { FadeUp } from "@/components/motion/fade-up";
 
 export const metadata = createPageMetadata({
   title: "Industries",
@@ -17,43 +20,69 @@ export const metadata = createPageMetadata({
 export default function IndustriesPage() {
   return (
     <>
-      <Section className="mt-0">
+      <Section className="mt-20">
         <Container className="space-y-8">
-          <div className="max-w-2xl space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary">
-              Industries
-            </p>
-            <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Industries We Serve
-            </h2>
-            <p className="text-base leading-7 text-muted-foreground">
-              We build for industries that depend on trust, clarity, and
-              lead-ready digital experiences.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {homeIndustries.map((industry) => {
+          <PageHero
+            eyebrow="Industries"
+            title="              Industries We Serve."
+            description="We build for industries that depend on trust, clarity, and
+              lead-ready digital experiences."
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2  lg:grid-cols-2">
+            {homeIndustries.map((industry, index) => {
               const Icon = industry.icon;
+              const itemIndex = String(index + 1).padStart(2, "0");
+              const badgeClassName = [
+                "bg-emerald-500 shadow-emerald-500/20",
+                "bg-blue-500 shadow-blue-500/20",
+                "bg-violet-500 shadow-violet-500/20",
+                "bg-amber-500 shadow-amber-500/20",
+                "bg-rose-500 shadow-rose-500/20",
+                "bg-cyan-500 shadow-cyan-500/20",
+              ][index % 6];
 
               return (
-                <Card
-                  key={industry.name}
-                  className="rounded-lg border border-border/70 bg-card p-5 text-card-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/10">
-                      <Icon className="h-5 w-5" />
+                <FadeUp key={industry.name} delay={index * 0.03}>
+                  <Card className="group relative min-h-[250px] overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_45px_-25px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/70">
+                    <div className="pointer-events-none absolute inset-0 z-0">
+                      {industry.image ? (
+                        <Image
+                          src={industry.image}
+                          alt={`${industry.name} industry`}
+                          fill
+                          className="z-0 object-cover object-center opacity-90"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                      ) : (
+                        <Icon className="absolute left-1/2 top-1/2 z-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 text-emerald-500/18 dark:text-emerald-300/12" />
+                      )}
+                      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/75 to-black/35 dark:from-black/95 dark:via-black/80 dark:to-black/45" />
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="font-semibold text-foreground">
-                        {industry.name}
-                      </h3>
-                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                        Custom growth-focused solution
-                      </p>
+
+                    <span className="pointer-events-none absolute right-6 top-4 z-20 text-6xl font-semibold text-transparent opacity-90 [-webkit-text-stroke:1.5px_rgba(226,232,240,0.9)] drop-shadow-[0_0_8px_rgba(255,255,255,0.18)] dark:[-webkit-text-stroke:1.5px_rgba(226,232,240,0.75)]">
+                      {itemIndex}
+                    </span>
+
+                    <div className="relative z-20 flex h-full flex-col justify-between">
+                      <div
+                        className={`flex h-14 w-14 items-center justify-center rounded-xl text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105 ${badgeClassName}`}
+                      >
+                        <Icon className="h-6 w-6" />
+                      </div>
+
+                      <div className="mt-10 space-y-2">
+                        <h3 className="font-heading text-3xl font-bold leading-tight text-white">
+                          {industry.name}
+                        </h3>
+                        <p className="text-base leading-relaxed text-white/75">
+                          Custom digital experience built to attract and convert
+                          customers.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </FadeUp>
               );
             })}
           </div>
