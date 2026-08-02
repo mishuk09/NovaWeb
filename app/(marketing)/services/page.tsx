@@ -17,8 +17,9 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <>
+    <div className="mt-28">
       <PageHero
+        
         eyebrow="Services"
         title="Services built to help your business get more inquiries."
         description="Choose individual services or combine them into a complete lead-generation system."
@@ -27,10 +28,15 @@ export default function ServicesPage() {
         <Container className="space-y-6">
           {serviceGroups.map((group) => (
             <Card key={group.category} className="rounded-2xl">
-              <h2 className="font-heading text-2xl font-semibold">{group.category}</h2>
+              <h2 className="font-heading text-2xl font-semibold">
+                {group.category}
+              </h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {group.items.map((item) => (
-                  <div key={item} className="rounded-xl border border-border bg-background px-4 py-3">
+                  <div
+                    key={item}
+                    className="rounded-xl border border-border bg-background px-4 py-3"
+                  >
                     <p className="font-medium">{item}</p>
                   </div>
                 ))}
@@ -45,8 +51,11 @@ export default function ServicesPage() {
         </Container>
       </Section>
       <BreadcrumbSchema
-        items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]}
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]}
       />
-    </>
+    </div>
   );
 }

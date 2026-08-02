@@ -6,15 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { FadeUp } from "@/components/motion/fade-up";
-import { HeroInfoStrip } from "@/components/sections/home/hero-info-strip";
-import { HeroNavbar } from "@/components/sections/home/hero-navbar";
+import { FadeUp } from "@/components/motion/fade-up"; 
 
 export function HeroSection() {
   return (
     <Section className="relative overflow-hidden pb-20 pt-16 md:pt-34">
-      <HeroInfoStrip />
-      <HeroNavbar />
+      {/* <HeroInfoStrip />
+      <HeroNavbar /> */}
       <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-primary/15 to-transparent" />
       <div className="absolute inset-0 -z-10 hidden bg-[url('/home.svg')] bg-cover bg-center bg-no-repeat  md:block" />
       <Container className="grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
