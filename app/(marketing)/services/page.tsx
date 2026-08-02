@@ -26,7 +26,7 @@ export default function ServicesPage() {
       */}
       <PageHero
         eyebrow="Our Services"
-        title="Software Development Your Business Needs From Start-Up To Success"
+        title="Explore Our Services and Solutions"
         description="Choose individual services or combine them into a complete lead-generation system with maximum efficiency."
       />
 
@@ -85,6 +85,8 @@ export default function ServicesPage() {
             Enhanced CTA Banner 
             Directly modeled after the "Let's Get To Work" section in the provided PDF.
           */}
+        <IndustriesPage />
+
           <div className="relative overflow-hidden rounded-lg border border-border bg-card px-6 py-20 text-center shadow-lg sm:px-12 ">
             <div className="relative z-10 flex flex-col items-center justify-center">
               <h3 className="mb-4 font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl">
@@ -115,9 +117,8 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="py-0  ">
-        <IndustriesPage />
-      </Section>
+    
+      
 
       <BreadcrumbSchema
         items={[
