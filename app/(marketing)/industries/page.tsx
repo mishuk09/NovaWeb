@@ -18,13 +18,12 @@ export const metadata = createPageMetadata({
 export default function IndustriesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Industries"
-        title="Solutions customized for your industry and customer journey."
-        description="We align design, content, and technical features with what your customers need before they contact you."
-      />
-      <Section className="pt-2">
+     
+      <Section className="mt-0 ">
         <Container className="space-y-8">
+            <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  Industries We Serve
+                  </h2>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {homeIndustries.map((industry) => {
               const Icon = industry.icon;
@@ -32,7 +31,7 @@ export default function IndustriesPage() {
               return (
                 <Card
                   key={industry.name}
-                  className="rounded-2xl border-border/60 bg-card/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                  className="rounded-lg border-border/60 bg-card/80   transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">

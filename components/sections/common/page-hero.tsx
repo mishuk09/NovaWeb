@@ -10,7 +10,7 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
-    <Section className="pb-10 pt-14 md:pt-16">
+    <Section className="pb-1 pt-10 md:pb-0 md:pt-12">
       <Container className="space-y-5">
         {eyebrow ? <Badge>{eyebrow}</Badge> : null}
         <h1 className="max-w-4xl font-heading text-4xl font-semibold tracking-tight md:text-5xl">
@@ -21,4 +21,3 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
     </Section>
   );
 }
-
