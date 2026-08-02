@@ -22,8 +22,8 @@ export const siteConfig: SiteConfig = {
   ],
   contact: {
     email: "hello@novanest.my",
-    phone: "+60 11-1111 1111",
-    whatsapp: "601111111111",
+    phone: "+60 1123654378",
+    whatsapp: "601123654378",
     address: "Melaka, Malaysia",
     businessHours: "Mon - Sat, 9:00 AM - 6:00 PM",
   },
@@ -34,4 +34,3 @@ export const siteConfig: SiteConfig = {
   ],
   serviceAreas: ["Melaka", "Kuala Lumpur", "Johor Bahru", "Penang", "Malaysia"],
 };
-

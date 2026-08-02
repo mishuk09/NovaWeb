@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { homeIndustries } from "@/config/home-content";
 import { FadeUp } from "@/components/motion/fade-up";
 import { Card } from "@/components/ui/card";
@@ -7,18 +10,39 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import Image from "next/image";
 
 export function IndustriesSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % homeIndustries.length);
+    }, 2500);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const visibleIndustries = [
+    homeIndustries[activeIndex],
+    homeIndustries[(activeIndex + 1) % homeIndustries.length],
+    homeIndustries[(activeIndex + 2) % homeIndustries.length],
+    homeIndustries[(activeIndex + 3) % homeIndustries.length],
+  ];
+
   return (
     <Section id="industries">
-      <Container className="space-y-10">
+      <Container className="space-y-8">
         <SectionHeading
           eyebrow="Industries"
           title="Built for real businesses across diverse local industries."
           description="We tailor messaging, page structure, and conversion strategy for your market and customer behavior."
         />
-        <div className="grid gap-4 sm:grid-cols-2  lg:grid-cols-2">
-          {homeIndustries.map((industry, index) => {
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {visibleIndustries.map((industry, index) => {
             const Icon = industry.icon;
-            const itemIndex = String(index + 1).padStart(2, "0");
+            const itemIndex = String(
+              (activeIndex + index + 1) % homeIndustries.length ||
+                homeIndustries.length,
+            ).padStart(2, "0");
             const badgeClassName = [
               "bg-emerald-500 shadow-emerald-500/20",
               "bg-blue-500 shadow-blue-500/20",
@@ -26,10 +50,13 @@ export function IndustriesSection() {
               "bg-amber-500 shadow-amber-500/20",
               "bg-rose-500 shadow-rose-500/20",
               "bg-cyan-500 shadow-cyan-500/20",
-            ][index % 6];
+            ][(activeIndex + index) % 6];
 
             return (
-              <FadeUp key={industry.name} delay={index * 0.03}>
+              <FadeUp
+                key={`${industry.name}-${activeIndex}`}
+                delay={index * 0.04}
+              >
                 <Card className="group relative min-h-[250px] overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_45px_-25px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/70">
                   <div className="pointer-events-none absolute inset-0 z-0">
                     {industry.image ? (
@@ -62,7 +89,8 @@ export function IndustriesSection() {
                         {industry.name}
                       </h3>
                       <p className="text-base leading-relaxed text-white/75">
-                        Custom digital experience built to attract and convert customers.
+                        Custom digital experience built to attract and convert
+                        customers.
                       </p>
                     </div>
                   </div>
@@ -71,8 +99,24 @@ export function IndustriesSection() {
             );
           })}
         </div>
+
+        <div className="flex items-center justify-center gap-3 pt-2">
+          {homeIndustries.map((industry, index) => (
+            <button
+              key={industry.name}
+              type="button"
+              aria-label={`Show ${industry.name}`}
+              aria-pressed={activeIndex === index}
+              onClick={() => setActiveIndex(index)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? "w-8 border border-sky-400/90 bg-transparent"
+                  : "w-2.5 bg-slate-500/80 hover:bg-slate-300/80"
+              }`}
+            />
+          ))}
+        </div>
       </Container>
     </Section>
   );
 }
-

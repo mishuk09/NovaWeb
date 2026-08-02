@@ -22,7 +22,7 @@ export function MobileNav() {
       </Button>
       <div
         className={cn(
-          "absolute right-0 top-12 z-20 w-64 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all",
+          "absolute right-0 top-12 z-20 w-64 rounded-lg border border-border bg-card p-4 shadow-xl transition-all",
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >

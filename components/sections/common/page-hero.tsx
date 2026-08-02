@@ -24,10 +24,10 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
           </Badge>
         ) : null}
         <div className="max-w-5xl space-y-5">
-          <h1 className="font-heading text-4xl font-black tracking-tight text-foreground sm:text-5xl md:text-6xl  ">
+          <h1 className="font-heading text-4xl font-black tracking-tight text-foreground   md:text-6xl  ">
             {title}
           </h1>
-          <p className="mx-auto max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg md:text-xl">
+          <p className="mx-auto max-w-3xl text-base  md:leading-8 text-muted-foreground  text-sm md:text-xl">
             {description}
           </p>
         </div>

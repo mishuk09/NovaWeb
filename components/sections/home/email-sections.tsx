@@ -71,7 +71,7 @@ export function EmailSection() {
   return (
     <Section
       id="faq"
-      className="relative overflow-hidden bg-background py-24 dark:bg-background"
+      className="relative overflow-hidden bg-background  dark:bg-background"
     >
       {/* Subtle background glow/gradient */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-40" />
@@ -81,10 +81,10 @@ export function EmailSection() {
           {/* FAQ Section - Left Side */}
           <div className="space-y-6">
             <div>
-              <p className="mb-2 text-sm font-semibold tracking-wide text-primary">
+              <p className="mb-2 text-xs md:text-sm font-semibold tracking-wide text-primary">
                 FAQs
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="text-xl md:text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Frequently Asked Question
               </h2>
             </div>
@@ -112,10 +112,10 @@ export function EmailSection() {
           {/* Contact Form - Right Side */}
           <div className="space-y-6">
             <div>
-              <p className="mb-2 text-sm font-semibold tracking-wide text-primary">
+              <p className="mb-2 text-xs md:text-sm font-semibold tracking-wide text-primary">
                 Get In Touch
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="text-xl md:text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Make An Free IT Consultant
               </h2>
             </div>

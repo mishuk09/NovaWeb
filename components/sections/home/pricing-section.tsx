@@ -55,7 +55,7 @@ export function PricingSection() {
   const customPackage = homePricing[3];
 
   return (
-    <Section id="pricing" className="relative overflow-hidden b`g-background">
+    <Section id="pricing" className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute right-[-7rem] bottom-[-5rem] h-72 w-72 rounded-full bg-accent/10 blur-3xl" />

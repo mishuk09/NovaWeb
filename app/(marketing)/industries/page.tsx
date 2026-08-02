@@ -20,7 +20,7 @@ export const metadata = createPageMetadata({
 export default function IndustriesPage() {
   return (
     <>
-      <Section className="mt-20">
+      <Section className="mt-6 md:mt-20">
         <Container className="space-y-8">
           <PageHero
             eyebrow="Industries"
@@ -29,7 +29,7 @@ export default function IndustriesPage() {
               lead-ready digital experiences."
           />
 
-          <div className="grid gap-4 sm:grid-cols-2  lg:grid-cols-2">
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-2  lg:grid-cols-2">
             {homeIndustries.map((industry, index) => {
               const Icon = industry.icon;
               const itemIndex = String(index + 1).padStart(2, "0");
@@ -44,7 +44,7 @@ export default function IndustriesPage() {
 
               return (
                 <FadeUp key={industry.name} delay={index * 0.03}>
-                  <Card className="group relative min-h-[250px] overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_45px_-25px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/70">
+                  <Card className="group relative md:min-h-[250px] overflow-hidden rounded-lg border border-slate-200 bg-slate-50 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_45px_-25px_rgba(15,23,42,0.35)] dark:border-slate-800 dark:bg-slate-900/70">
                     <div className="pointer-events-none absolute inset-0 z-0">
                       {industry.image ? (
                         <Image
@@ -60,22 +60,22 @@ export default function IndustriesPage() {
                       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/75 to-black/35 dark:from-black/95 dark:via-black/80 dark:to-black/45" />
                     </div>
 
-                    <span className="pointer-events-none absolute right-6 top-4 z-20 text-6xl font-semibold text-transparent opacity-90 [-webkit-text-stroke:1.5px_rgba(226,232,240,0.9)] drop-shadow-[0_0_8px_rgba(255,255,255,0.18)] dark:[-webkit-text-stroke:1.5px_rgba(226,232,240,0.75)]">
+                    <span className="pointer-events-none absolute right-6 top-4 z-20 text-xl md:text-6xl font-semibold text-transparent opacity-90 [-webkit-text-stroke:1.5px_rgba(226,232,240,0.9)] drop-shadow-[0_0_8px_rgba(255,255,255,0.18)] dark:[-webkit-text-stroke:1.5px_rgba(226,232,240,0.75)]">
                       {itemIndex}
                     </span>
 
                     <div className="relative z-20 flex h-full flex-col justify-between">
                       <div
-                        className={`flex h-14 w-14 items-center justify-center rounded-xl text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105 ${badgeClassName}`}
+                        className={`flex h-8 w-8 md:h-14 md:w-14 items-center justify-center rounded-lg text-white shadow-sm backdrop-blur-sm transition-transform duration-300 group-hover:scale-105 ${badgeClassName}`}
                       >
-                        <Icon className="h-6 w-6" />
+                        <Icon className="h-4 w-4 md:h-6 md:w-6" />
                       </div>
 
                       <div className="mt-10 space-y-2">
-                        <h3 className="font-heading text-3xl font-bold leading-tight text-white">
+                        <h3 className="font-heading text-lg md:text-3xl font-bold leading-tight text-white">
                           {industry.name}
                         </h3>
-                        <p className="text-base leading-relaxed text-white/75">
+                        <p className="text-base hidden md:block leading-relaxed text-white/75">
                           Custom digital experience built to attract and convert
                           customers.
                         </p>
