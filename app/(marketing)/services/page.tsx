@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { serviceGroups } from "@/config/core-pages-content";
 import { BreadcrumbSchema } from "@/components/seo/page-schemas";
 import { Button } from "@/components/ui/button";
@@ -19,68 +19,103 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <div className="mt-28 flex min-h-screen flex-col">
+    <div className="mt-28 flex min-h-screen flex-col bg-background text-foreground">
+      {/* 
+        Updated PageHero to match the clean, bold aesthetic 
+        of the "Organize Your Projects" header in the PDF.
+      */}
       <PageHero
-        eyebrow="Services"
-        title="Services built to help your business get more inquiries."
-        description="Choose individual services or combine them into a complete lead-generation system."
+        eyebrow="Our Services"
+        title="Software Development Your Business Needs From Start-Up To Success"
+        description="Choose individual services or combine them into a complete lead-generation system with maximum efficiency."
       />
 
-      <Section className="   mt-0 pt-0  ">
-        <Container className=" ">
-          {/* Services Grid */}
+      <Section className="  ">
+        <Container className="space-y-14">
+          {/* Services Grid - Styled like the clean pricing/feature cards */}
           <div className="grid gap-8 lg:gap-12">
-            {serviceGroups.map((group) => (
+            {serviceGroups.map((group, index) => (
               <Card
                 key={group.category}
-                className="group overflow-hidden rounded-[2rem] border border-border/50 bg-background/50 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md sm:p-10"
+                className="group relative overflow-hidden rounded-lg border border-border bg-card p-8 text-card-foreground shadow-[0_10px_40px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_50px_rgba(15,23,42,0.1)] sm:p-12"
               >
-                <div className="mb-6 flex items-center justify-between sm:mb-8">
-                  <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                    {group.category}
-                  </h2>
-                </div>
-
-                <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="group/item flex items-start gap-3 rounded-2xl border border-border/40 bg-muted/30 p-4 transition-all duration-200 hover:border-primary/30 hover:bg-muted/80 hover:shadow-sm"
-                    >
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary/60 transition-colors group-hover/item:text-primary" />
-                      <span className="text-sm font-medium leading-snug text-foreground/80 transition-colors group-hover/item:text-foreground md:text-base">
-                        {item}
+                <div className="relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-8">
+                  {/* Left Column: Category Info */}
+                  <div className="lg:col-span-4 lg:pr-8">
+                    <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-primary">
+                      <Sparkles className="h-4 w-4" />
+                      <span className="text-xs font-bold uppercase tracking-wide">
+                        Module 0{index + 1}
                       </span>
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                    <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                      {group.category}
+                    </h2>
+                    <p className="mt-4 leading-relaxed text-muted-foreground">
+                      {/* @ts-ignore */}
+                      {group.description ||
+                        `Comprehensive ${group.category.toLowerCase()} solutions tailored to accelerate your business growth, streamline operations, and drive measurable results.`}
+                    </p>
+                  </div>
+
+                  {/* Right Column: Service Items with checkmarks styled like the PDF list items */}
+                  <div className="border-border lg:col-span-8 lg:border-l lg:pl-8">
+                    <ul className="grid gap-4 sm:grid-cols-2">
+                      {group.items.map((item) => (
+                        <li
+                          key={item}
+                          className="group/item flex items-start gap-4 rounded-xl border border-border/60 bg-muted/40 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-card hover:shadow-md"
+                        >
+                          <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover/item:bg-primary/20">
+                            <CheckCircle2 className="h-5 w-5 text-primary" />
+                          </div>
+                          <span className="text-sm font-semibold leading-snug text-foreground transition-colors md:text-base">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
 
-          {/* Enhanced CTA Banner */}
-          <div className="relative mt-16 overflow-hidden rounded-[2rem] bg-primary/5 px-6 py-12 text-center border border-primary/10 sm:px-12 sm:py-16 lg:py-20">
-            <h3 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Ready to scale your business?
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground sm:text-lg">
-              Let's discuss how we can build a customized lead-generation engine
-              tailored to your specific requirements.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="h-12 rounded-full px-8 text-base transition-transform hover:scale-105 active:scale-95"
-              >
-                <Link href="/contact">
-                  Get a Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+          {/* 
+            Enhanced CTA Banner 
+            Directly modeled after the "Let's Get To Work" section in the provided PDF.
+          */}
+          <div className="relative overflow-hidden rounded-lg border border-border bg-card px-6 py-20 text-center shadow-lg sm:px-12 ">
+            <div className="relative z-10 flex flex-col items-center justify-center">
+              <h3 className="mb-4 font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+                Let's Get To Work
+              </h3>
+              <p className="mx-auto mb-8 max-w-2xl font-medium text-muted-foreground sm:text-lg">
+                Check Ranking Reports Via Our Web App, Contact Us Today!
+              </p>
+
+              <div className="mb-10 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                +1 (888) 123-4567
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-14 w-full rounded-full bg-primary px-10 text-base font-bold text-primary-foreground shadow-md transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-lg active:scale-95 sm:w-auto"
+                >
+                  <Link href="/contact">
+                    Contact Us
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
+      </Section>
+
+      <Section className="py-0  ">
         <IndustriesPage />
       </Section>
 
