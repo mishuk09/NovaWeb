@@ -9,13 +9,13 @@ export function HeroInfoStrip() {
         <div className="flex flex-col gap-2   px-4 py-3 text-sm   md:flex-row md:items-center md:justify-between md:px-2">
           <p className="font-semibold text-foreground">Welcome to our IT Solution Company!</p>
           <div className="flex flex-col gap-2 text-foreground md:flex-row md:items-center md:gap-6">
-            <Link href="mailto:support@gmail.com" className="inline-flex items-center  font-semibold gap-2   hover:text-foreground">
+            <Link href="mailto:support@novanest.my" className="inline-flex text-white items-center  font-semibold gap-2   hover:text-foreground">
               <Mail className="h-4 w-4" />
-              support@gmail.com
+              support@novanest.my
             </Link>
             <span className="inline-flex text-white font-semibold items-center gap-2">
               <MapPin className="h-4 w-4" />
-              515 Carriage Court, CA, 92236 USA
+             Melaka, Malaysia
             </span>
           </div>
         </div>

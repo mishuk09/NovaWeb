@@ -21,8 +21,8 @@ export function FaqSection() {
       <Container className="space-y-12">
         <SectionHeading
           eyebrow="FAQ"
-          title="Everything you need to know before starting your project."
-          description="Answers to common questions from business owners planning their digital presence."
+          title="Freequently Asked Question"
+          description=" "
         />
         
         <div className="mx-auto max-w-3xl">
@@ -33,7 +33,7 @@ export function FaqSection() {
                 key={item.question}
                 value={`item-${index}`}
                 // Removes default bottom border and turns each item into a polished card with active states
-                className="overflow-hidden rounded-2xl border border-border/50 bg-background px-6 py-2 shadow-sm transition-all hover:border-border hover:shadow-md data-[state=open]:border-primary/30 data-[state=open]:bg-primary/[0.02] data-[state=open]:shadow-md"
+                className="overflow-hidden rounded-lg border border-border/50 bg-background px-6 py-2 shadow-sm transition-all hover:border-border hover:shadow-md data-[state=open]:border-primary/30 data-[state=open]:bg-primary/[0.02] data-[state=open]:shadow-md"
               >
                 <AccordionTrigger className="text-left text-base font-semibold transition-colors hover:no-underline [&[data-state=open]]:text-primary">
                   {item.question}

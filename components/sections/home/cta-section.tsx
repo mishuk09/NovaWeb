@@ -8,7 +8,7 @@ export function CtaSection() {
   return (
     <Section id="cta" className="pb-20">
       <Container>
-        <div className="rounded-3xl border border-primary/20 bg-gradient-to-r from-primary to-accent px-6 py-12 text-center text-white shadow-lg md:px-10">
+        <div className="rounded-lg border border-primary/20 bg-gradient-to-r from-primary to-accent px-6 py-12 text-center text-white shadow-lg md:px-10">
           <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
             Ready to get more qualified inquiries every month?
           </h2>

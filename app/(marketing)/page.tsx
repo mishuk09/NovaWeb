@@ -1,5 +1,5 @@
 import { CtaSection } from "@/components/sections/home/cta-section";
-import { FaqSection } from "@/components/sections/home/faq-section";
+import { EmailSection } from "@/components/sections/home/email-sections";
 import { HeroSection } from "@/components/sections/home/hero-section";
 import { IndustriesSection } from "@/components/sections/home/industries-section";
 import { PortfolioPreviewSection } from "@/components/sections/home/portfolio-preview-section";
@@ -28,9 +28,8 @@ export default function HomePage() {
       <IndustriesSection />
       <PricingSection />
       <TestimonialsSection />
-      <FaqSection />
+      <EmailSection />
       <CtaSection />
     </>
   );
 }
-
