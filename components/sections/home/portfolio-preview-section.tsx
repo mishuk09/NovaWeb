@@ -80,7 +80,7 @@ export async function PortfolioPreviewSection() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((project, index) => (
             <FadeUp key={project.id} delay={index * 0.04}>
-              <Card className="group flex h-full flex-col overflow-hidden rounded-2xl p-0">
+              <Card className="group flex h-full flex-col overflow-hidden rounded-lg p-0">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={project.image}

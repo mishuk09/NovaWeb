@@ -64,7 +64,7 @@ export default function AboutPage() {
   ] as const;
 
   return (
-    <div className="mt-38 flex min-h-screen flex-col bg-background text-foreground">
+    <div className="mt-20 md:mt-38 flex min-h-screen flex-col bg-background text-foreground">
       <Section className="relative overflow-hidden pb-14 pt-10 md:pb-20 md:pt-14">
         <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.2)_1px,transparent_0)] [background-size:28px_28px]" />
         <div className="pointer-events-none absolute left-[7%] top-[12%] h-64 w-64 rounded-full border border-primary/15" />
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute right-[-4rem] top-10 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         <Container className="relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <FadeUp className="space-y-7">
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col gap-2 items-center md:items-start text-center md:text-left">
               <p className="text-sm font-semibold text-primary">
                 About Our Company
               </p>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full px-7 shadow-lg shadow-primary/20"
+                className="rounded-lg px-7 shadow-lg shadow-primary/20"
               >
                 <Link href="/contact">
                   Contact Us
@@ -141,10 +141,10 @@ export default function AboutPage() {
             delay={0.08}
             className="relative mx-auto w-full max-w-[540px]"
           >
-            <div className="absolute left-6 top-8 h-44 w-44 rounded-full border border-primary/15" />
-            <div className="absolute left-14 top-16 h-32 w-32 rounded-full border border-primary/10" />
-            <div className="absolute right-0 bottom-0 h-[72%] w-[82%] rounded-[2rem] bg-gradient-to-br from-[#1677ff] via-[#1b6ee8] to-[#0b4fd8] shadow-[0_30px_80px_rgba(2,99,235,0.28)]" />
-            <div className="absolute right-0 bottom-0 h-[72%] w-[82%] rounded-[2rem] bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.02)_100%)]" />
+            <div className="absolute left-6 top-8 h-44 w-44 rounded-lg border border-primary/15" />
+            <div className="absolute left-14 top-16 h-32 w-32 rounded-lg border border-primary/10" />
+            <div className="absolute right-0 bottom-0 h-[72%] w-[82%] rounded-lg bg-gradient-to-br from-[#1677ff] via-[#1b6ee8] to-[#0b4fd8] shadow-[0_30px_80px_rgba(2,99,235,0.28)]" />
+            <div className="absolute right-0 bottom-0 h-[72%] w-[82%] rounded-lg bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.02)_100%)]" />
             <div className="absolute -left-2 top-20 z-20 rounded-2xl border border-border/70 bg-card/95 px-4 py-4 text-card-foreground shadow-[0_20px_50px_rgba(15,23,42,0.14)] backdrop-blur-sm">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Sparkles className="h-5 w-5" />
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 <PhoneCall className="h-4 w-4" /> Contact us: +60 11-1111 1111
               </span>
             </div>
-            <div className="relative z-10 aspect-[0.92] overflow-hidden rounded-[2rem] border border-border/70 bg-card/80 p-4 shadow-[0_24px_70px_rgba(15,23,42,0.12)] backdrop-blur-sm md:p-6">
+            <div className="relative z-10 aspect-[0.92] overflow-hidden rounded-lg border border-border/70 bg-card/80 p-4 shadow-[0_24px_70px_rgba(15,23,42,0.12)] backdrop-blur-sm md:p-6">
               <Image
                 src="/home-img.svg"
                 alt="novanest about illustration"

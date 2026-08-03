@@ -97,7 +97,7 @@ export function WhyChooseUsSection() {
             </FadeUp>
 
             <FadeUp delay={0.4}>
-              <Button size="lg" className="rounded-lg">
+              <Button size="lg" className="rounded-lg flex mx-auto">
                 Get Free Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </FadeUp>
