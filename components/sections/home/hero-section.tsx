@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { FadeUp } from "@/components/motion/fade-up"; 
+import { FadeUp } from "@/components/motion/fade-up";
 
 export function HeroSection() {
   return (
@@ -18,7 +18,7 @@ export function HeroSection() {
       <Container className="grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeUp className="space-y-6">
           <p className="inline-flex      px-1  font-bold text-[var(--primary)]  ">
-            {homeHero.badge} 
+            {homeHero.badge}
           </p>
           <h1 className="font-heading text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
             {homeHero.title}{" "}
@@ -34,13 +34,19 @@ export function HeroSection() {
             </span>{" "}
             Businesses
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground">{homeHero.description}</p>
+          <p className="max-w-2xl text-lg text-muted-foreground">
+            {homeHero.description}
+          </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link href={homeHero.primaryCta.href}>{homeHero.primaryCta.label}</Link>
+              <Link href={homeHero.primaryCta.href}>
+                {homeHero.primaryCta.label}
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href={homeHero.secondaryCta.href}>{homeHero.secondaryCta.label}</Link>
+              <Link href={homeHero.secondaryCta.href}>
+                {homeHero.secondaryCta.label}
+              </Link>
             </Button>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
@@ -59,8 +65,15 @@ export function HeroSection() {
           </div>
         </FadeUp>
         <FadeUp delay={0.1}>
-          <Card className="overflow-hidden  border-0 bg-transparent p-0 shadow-none backdrop-blur-0">
-           <img src="/home-img.svg" className="w-full h-full" alt="Hero Image"   />
+          <Card className="overflow-hidden border-0 bg-transparent p-0 shadow-none backdrop-blur-0">
+            <Image
+              src="/home-img.svg"
+              alt="Hero Image"
+              width={960}
+              height={720}
+              className="h-auto w-full"
+              priority
+            />
           </Card>
         </FadeUp>
       </Container>

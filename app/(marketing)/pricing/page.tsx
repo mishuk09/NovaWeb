@@ -1,4 +1,5 @@
 import { homePricing } from "@/config/home-content";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, Check, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,6 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
 import { PageHero } from "@/components/sections/common/page-hero";
-import { PriceShortInfo } from "@/components/sections/home/price-short-info";
 
 export default function PricingPage() {
   const cards = [
@@ -52,8 +52,6 @@ export default function PricingPage() {
       featured: false,
     },
   ];
-
-  const customPackage = homePricing[3];
 
   return (
     <Section
@@ -260,10 +258,12 @@ export default function PricingPage() {
 
               {/* Right Content / Just the Image Now */}
               <div className="relative flex min-h-[300px] flex-1 items-center justify-center md:justify-end">
-                <img
+                <Image
                   src="https://www.virtualpbx.com/wp-content/uploads/2021/10/Improve-Microsoft-Teams-Call-Performance.png"
                   alt="IT Expert"
-                  className="relative z-10 h-[300px] w-auto object-contain drop-shadow-2xl"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="relative z-10 object-contain drop-shadow-2xl"
                 />
               </div>
             </div>

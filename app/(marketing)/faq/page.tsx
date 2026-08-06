@@ -1,12 +1,7 @@
-import Link from "next/link";
 import { homeFaq } from "@/config/home-content";
 import { BreadcrumbSchema } from "@/components/seo/page-schemas";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/sections/common/page-hero";
-import { FaqAccordion } from "@/components/shared/faq-accordion";
-import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
-import { Section } from "@/components/ui/section";
 import { buildFaqSchema, createPageMetadata } from "@/lib/seo";
 import { EmailSection } from "@/components/sections/home/email-sections";
 

@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -79,10 +80,12 @@ export function PriceShortInfo() {
 
             {/* Right Content / Just the Image Now */}
             <div className="relative flex min-h-[300px] flex-1 items-center justify-center md:justify-end">
-              <img
+              <Image
                 src="https://www.virtualpbx.com/wp-content/uploads/2021/10/Improve-Microsoft-Teams-Call-Performance.png"
                 alt="IT Expert"
-                className="relative z-10 h-[300px] w-auto object-contain drop-shadow-2xl"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="relative z-10 object-contain drop-shadow-2xl"
               />
             </div>
           </div>

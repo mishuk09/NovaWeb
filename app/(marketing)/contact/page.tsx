@@ -1,17 +1,14 @@
-import Link from "next/link";
 import {
   Mail,
   MapPin,
   MessageCircleMore,
   Clock3,
-  CheckCircle2,
   PhoneCall,
 } from "lucide-react";
 import { contactChannels } from "@/config/core-pages-content";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbSchema } from "@/components/seo/page-schemas";
 import { PageHero } from "@/components/sections/common/page-hero";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { PageHero } from "@/components/sections/common/page-hero";
 import { WhyChooseUsSection } from "@/components/sections/home/why-choose-us-section";
 

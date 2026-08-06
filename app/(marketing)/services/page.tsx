@@ -52,9 +52,7 @@ export default function ServicesPage() {
                       {group.category}
                     </h2>
                     <p className="mt-4 leading-relaxed text-muted-foreground">
-                      {/* @ts-ignore */}
-                      {group.description ||
-                        `Comprehensive ${group.category.toLowerCase()} solutions tailored to accelerate your business growth, streamline operations, and drive measurable results.`}
+                      {`Comprehensive ${group.category.toLowerCase()} solutions tailored to accelerate your business growth, streamline operations, and drive measurable results.`}
                     </p>
                   </div>
 
@@ -85,12 +83,12 @@ export default function ServicesPage() {
             Enhanced CTA Banner 
             Directly modeled after the "Let's Get To Work" section in the provided PDF.
           */}
-        <IndustriesPage />
+          <IndustriesPage />
 
           <div className="relative overflow-hidden rounded-lg border border-border bg-card px-6 py-20 text-center shadow-lg sm:px-12 ">
             <div className="relative z-10 flex flex-col items-center justify-center">
               <h3 className="mb-4 font-heading text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-                Let's Get To Work
+                Let&apos;s Get To Work
               </h3>
               <p className="mx-auto mb-8 max-w-2xl font-medium text-muted-foreground sm:text-lg">
                 Check Ranking Reports Via Our Web App, Contact Us Today!
@@ -116,9 +114,6 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
-
-    
-      
 
       <BreadcrumbSchema
         items={[

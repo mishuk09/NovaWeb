@@ -31,7 +31,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${poppins.variable} h-full scroll-smooth`}
     >
-      <body className="min-h-full bg-background font-sans text-slate-900 antialiased dark:text-slate-100">
+      <body
+        suppressHydrationWarning
+        className="min-h-full bg-background font-sans text-slate-900 antialiased dark:text-slate-100"
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -45,4 +48,3 @@ export default function RootLayout({
     </html>
   );
 }
-

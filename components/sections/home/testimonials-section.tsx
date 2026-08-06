@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Check, Link, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { useState } from "react";
-import { homePricing, homeTestimonials } from "@/config/home-content";
+import { homeTestimonials } from "@/config/home-content";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Card } from "@/components/ui/card";
 import { PriceShortInfo } from "./price-short-info";
 
 const testimonialCount = homeTestimonials.length;
@@ -38,14 +37,13 @@ export function TestimonialsSection() {
     homeTestimonials[(activeIndex + 1) % testimonialCount],
   ];
 
-  const customPackage = homePricing[3];
   return (
     <Section
       id="testimonials"
       className="relative overflow-visible mt-[230px] isolate bg-[#06162a] py-20 text-white md:py-28"
     >
       <PriceShortInfo />
-     
+
       <div className="absolute inset-0 -z-20 bg-[#06162a]" />
       <div className="absolute inset-0 -z-10 opacity-18">
         <Image
