@@ -53,6 +53,8 @@ export default function PricingPage() {
     },
   ];
 
+  const customPackage = homePricing[3];
+
   return (
     <Section
       id="pricing"
