@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
     { label: "Contact", href: "/contact" },
   ],
   contact: {
-    email: "hello@novanest.my",
+    email: "support@novanest.my",
     phone: "+60 1123654378",
     whatsapp: "601123654378",
     address: "Melaka, Malaysia",

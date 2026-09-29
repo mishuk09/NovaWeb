@@ -56,8 +56,8 @@ export const contactChannels = [
   },
   {
     label: "Email",
-    value: "hello@novanest.my",
-    href: "mailto:hello@novanest.my",
+    value: "support@novanest.my",
+    href: "mailto:support@novanest.my",
   },
   {
     label: "WhatsApp",

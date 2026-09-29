@@ -22,6 +22,13 @@ export function ContactForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "idle" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -38,9 +45,26 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus({ type: "idle", message: "" });
 
     try {
-      console.log("Form data:", formData);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as {
+        message?: string;
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(result.error ?? "Something went wrong.");
+      }
+
       setFormData({
         name: "",
         email: "",
@@ -48,8 +72,20 @@ export function ContactForm() {
         service: "",
         message: "",
       });
+      setStatus({
+        type: "success",
+        message:
+          result.message ??
+          "Your message has been sent. We’ll get back to you shortly.",
+      });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Unable to send your message right now.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -141,6 +177,15 @@ export function ContactForm() {
             {isSubmitting ? "Sending..." : "Send"}
           </Button>
         </div>
+
+        {status.type !== "idle" ? (
+          <p
+            className={`text-sm ${status.type === "success" ? "text-emerald-600 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}
+            aria-live="polite"
+          >
+            {status.message}
+          </p>
+        ) : null}
       </form>
     </div>
   );

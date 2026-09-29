@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact Form Email
+
+The contact form sends mail through Hostinger's mail API. Add this environment variable before using `/contact`:
+
+```bash
+HOSTINGER_MAIL_API_TOKEN=your_hostinger_api_token
+```
+
+The API route resolves the managed mailbox automatically from Hostinger and sends messages to `support@novanest.my` by default.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
