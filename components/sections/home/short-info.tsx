@@ -14,12 +14,11 @@ const iconStyles = [
 
 export function ShortInfo() {
   return (
-    <div className="relative z-20 -mt-20 mb-8 md:-mt-40 md:mb-10">
+    <div className="relative z-20 -mt-20 mb-8 md:-mt-40 md:mb-10 pt-6">
       <Container>
         <FadeUp delay={0.1}>
           <Card className="overflow-hidden rounded-lg border border-border/40 bg-card p-0 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:bg-slate-950/80">
-            {/* <div className="h-1 bg-gradient-to-r from-primary/70 via-primary to-accent" /> */}
-            <div className="grid divide-y   md:grid-cols-3 md:divide-x md:divide-y-0">
+            <div className="grid divide-y-6   md:grid-cols-3 md:divide-x md:divide-y-0">
               {homeHero.stats.map((item, index) => {
                 const Icon = statIcons[index % statIcons.length];
 
