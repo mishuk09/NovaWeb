@@ -1,6 +1,14 @@
 import Link from "next/link";
+import {
+  Clock3,
+  Mail,
+  MapPin,
+  MessageCircleMore,
+  PhoneCall,
+} from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/container";
+import { Logo } from "./logo";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -9,8 +17,10 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-card/60">
       <Container className="grid gap-8 py-12 md:grid-cols-3">
         <div>
-          <h3 className="font-heading text-lg font-semibold">{siteConfig.name}</h3>
-          <p className="mt-3 text-sm text-muted-foreground">{siteConfig.description}</p>
+          <Logo />
+          <p className="mt-3 text-sm text-muted-foreground">
+            {siteConfig.description}
+          </p>
           <p className="mt-3 text-sm font-medium text-foreground">
             Based in Melaka • Serving businesses across Malaysia
           </p>
@@ -20,18 +30,35 @@ export function SiteFooter() {
             Contact
           </h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li>{siteConfig.contact.address}</li>
-            <li>{siteConfig.contact.businessHours}</li>
-            <li>{siteConfig.contact.phone}</li>
+            <li className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {siteConfig.contact.address}
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {siteConfig.contact.businessHours}
+            </li>
+            <li className="flex items-center gap-2">
+              <PhoneCall className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {siteConfig.contact.phone}
+            </li>
             <li>
-              <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="inline-flex items-center gap-2"
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                {siteConfig.contact.email}
+              </a>
             </li>
             <li>
               <a
                 href={`https://wa.me/${siteConfig.contact.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
               >
+                <MessageCircleMore className="h-4 w-4" aria-hidden="true" />
                 WhatsApp Chat
               </a>
             </li>

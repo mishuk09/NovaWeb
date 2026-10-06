@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail, MessageCircleMore } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -13,15 +14,26 @@ export function CtaSection() {
             Ready to get more qualified inquiries every month?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/90">
-            Tell us your goals and budget. We&apos;ll recommend the most suitable approach and send
-            a clear quote with timeline.
+            Tell us your goals and budget. We&apos;ll recommend the most
+            suitable approach and send a clear quote with timeline.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="outline" className="border-white/30 bg-white/15 text-white">
-              <Link href="/contact">Get Free Quote</Link>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/30 bg-white/15 text-white"
+            >
+              <Link href="/contact">
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                Get Free Quote
+              </Link>
             </Button>
             <Button asChild className="bg-white text-primary hover:bg-white/90">
-              <Link href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank">
+              <Link
+                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                target="_blank"
+              >
+                <MessageCircleMore className="h-4 w-4" aria-hidden="true" />
                 WhatsApp Us
               </Link>
             </Button>
