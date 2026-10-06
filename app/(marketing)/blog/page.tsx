@@ -17,17 +17,20 @@ export const metadata = createPageMetadata({
 export default function BlogPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Blog"
-        title="Actionable insights for digital growth."
-        description="Our full blog system with categories, search, and related posts will be launched in the next phase."
-      />
+      <div className="pt-20 md:pt-28">
+        <PageHero
+          eyebrow="Blog"
+          title="Actionable insights for digital growth."
+          description="Our full blog system with categories, search, and related posts will be launched in the next phase."
+        />
+      </div>
       <Section className="pt-2">
         <Container className="space-y-4">
           <Card className="rounded-2xl">
             <h2 className="font-heading text-2xl font-semibold">Coming next</h2>
             <p className="mt-2 text-muted-foreground">
-              We are preparing structured educational content for business owners in Malaysia.
+              We are preparing structured educational content for business
+              owners in Malaysia.
             </p>
             <Button asChild className="mt-5">
               <Link href="/contact">Request content topics</Link>
@@ -35,8 +38,12 @@ export default function BlogPage() {
           </Card>
         </Container>
       </Section>
-      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]}
+      />
     </>
   );
 }
-

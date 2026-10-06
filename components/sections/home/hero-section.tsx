@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { FadeUp } from "@/components/motion/fade-up";
+import { DecorativeShapes } from "@/components/ui/decorative-shapes";
 
 export function HeroSection() {
   return (
@@ -15,7 +16,8 @@ export function HeroSection() {
       <HeroNavbar /> */}
       <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-gradient-to-b from-primary/15 to-transparent" />
       <div className="absolute inset-0 -z-10 hidden bg-[url('/home.svg')] bg-cover bg-center bg-no-repeat  md:block" />
-      <Container className="grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <DecorativeShapes />
+      <Container className="relative grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeUp className="space-y-6">
           <p className="inline-flex      px-1  font-bold text-[var(--primary)]  ">
             {homeHero.badge}
@@ -64,7 +66,8 @@ export function HeroSection() {
             </span>
           </div>
         </FadeUp>
-        <FadeUp delay={0.1}>
+        <FadeUp className="relative" delay={0.1}>
+          <DecorativeShapes variant="frame" className="z-10" />
           <Card className="overflow-hidden border-0 bg-transparent p-0 shadow-none backdrop-blur-0">
             <Image
               src="/home-img.svg"
