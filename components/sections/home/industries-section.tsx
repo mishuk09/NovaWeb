@@ -63,7 +63,15 @@ export function IndustriesSection() {
                   key={`${industry.name}-${activeIndex}`}
                   delay={index * 0.04}
                 >
-                  <Card className="group relative aspect-[0.86] min-h-[250px] overflow-hidden rounded-xl border-0 bg-slate-900 p-0 text-left shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <Card
+                    className={`group relative aspect-[0.86] min-h-[250px] overflow-hidden rounded-xl border-0 bg-slate-900 p-0 text-left shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                      index === 0
+                        ? ""
+                        : index === 1
+                          ? "hidden sm:block"
+                          : "hidden lg:block"
+                    }`}
+                  >
                     <div className="absolute inset-0">
                       {industry.image ? (
                         <Image
@@ -80,7 +88,7 @@ export function IndustriesSection() {
                     </div>
 
                     <div className="relative z-10 flex h-full items-start p-5 sm:p-6">
-                      <h3 className="font-heading text-xl font-bold leading-tight text-white sm:text-2xl">
+                      <h3 className="font-heading text-3xl font-bold leading-tight text-white sm:text-2xl">
                         {industry.name}
                       </h3>
                     </div>
