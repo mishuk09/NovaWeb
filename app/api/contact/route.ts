@@ -1,78 +1,63 @@
 import { NextResponse } from "next/server";
-import {
-  AccountApiFactory,
-  Configuration,
-  SendApiFactory,
-} from "hostinger-mail-api-sdk";
-import { siteConfig } from "@/config/site";
+import nodemailer from "nodemailer";
 
 type ContactRequestBody = {
   name?: string;
-  email?: string;
+  mail?: string;
   phone?: string;
   service?: string;
   message?: string;
 };
 
 export async function POST(request: Request) {
-  const body = (await request.json().catch(() => null)) as ContactRequestBody | null;
+  const body = (await request
+    .json()
+    .catch(() => null)) as ContactRequestBody | null;
 
   if (!body) {
     return NextResponse.json(
-      { error: "Invalid request body." },
+      { success: false, error: "Invalid request body." },
       { status: 400 },
     );
   }
 
   const name = body.name?.trim();
-  const email = body.email?.trim();
+  const mail = body.mail?.trim();
   const message = body.message?.trim();
   const phone = body.phone?.trim();
   const service = body.service?.trim();
 
-  if (!name || !email || !message) {
+  if (!name || !mail || !message) {
     return NextResponse.json(
-      { error: "Name, email, and message are required." },
+      { success: false, error: "Name, email, and message are required." },
       { status: 400 },
     );
   }
 
-  const accessToken = process.env.HOSTINGER_MAIL_API_TOKEN;
-
-  if (!accessToken) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     return NextResponse.json(
       {
-        error:
-          "Missing Hostinger mail configuration. Set HOSTINGER_MAIL_API_TOKEN.",
+        success: false,
+        error: "Missing email configuration. Set EMAIL_USER and EMAIL_PASS.",
       },
       { status: 500 },
     );
   }
 
-  const configuration = new Configuration({ accessToken });
-  const accountClient = AccountApiFactory(configuration);
-  const mailClient = SendApiFactory(configuration);
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
-  const account = await accountClient.getCurrentAccount();
-  const mailbox =
-    account.data.data.mailboxes.find(
-      (item) => item.address.toLowerCase() === siteConfig.contact.email.toLowerCase(),
-    ) ?? account.data.data.mailboxes[0];
-
-  if (!mailbox) {
-    return NextResponse.json(
-      {
-        error:
-          "No managed mailbox was found for the authenticated Hostinger token.",
-      },
-      { status: 500 },
-    );
-  }
-
-  const subject = `New contact request from ${name}`;
+  const subject = `New ${service || "website inquiry"} request from ${name}`;
   const text = [
     `Name: ${name}`,
-    `Email: ${email}`,
+    `Email: ${mail}`,
     phone ? `Phone: ${phone}` : null,
     service ? `Service: ${service}` : null,
     "",
@@ -82,27 +67,40 @@ export async function POST(request: Request) {
     .join("\n");
 
   const html = `
-    <h2>New contact request</h2>
-    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
-    ${service ? `<p><strong>Service:</strong> ${escapeHtml(service)}</p>` : ""}
-    <p><strong>Message:</strong></p>
-    <p>${escapeHtml(message).replaceAll("\n", "<br />")}</p>
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:auto;color:#172033;line-height:1.6">
+      <div style="background:#172033;color:#fff;padding:24px;border-radius:8px 8px 0 0">
+        <h2 style="margin:0">New contact request</h2>
+        <p style="margin:8px 0 0;color:#cbd5e1">From novanest.my</p>
+      </div>
+      <div style="border:1px solid #e2e8f0;border-top:0;padding:24px;border-radius:0 0 8px 8px">
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(mail)}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
+        ${service ? `<p><strong>Service:</strong> ${escapeHtml(service)}</p>` : ""}
+        <p><strong>Message:</strong></p>
+        <p style="white-space:pre-wrap">${escapeHtml(message)}</p>
+      </div>
+    </div>
   `;
 
-  await mailClient.sendEmail(mailbox.resourceId, {
-    to: [siteConfig.contact.email],
-    displayName: mailbox.address,
-    cc: [],
-    bcc: [],
-    subject,
-    text,
-    html,
-    attachments: [],
-  });
+  try {
+    await transporter.sendMail({
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      replyTo: mail,
+      to: "support@novanest.my",
+      subject,
+      text,
+      html,
+    });
+  } catch {
+    return NextResponse.json(
+      { success: false, error: "Unable to send your message right now." },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({
+    success: true,
     message: "Thanks, your message has been sent to novanest support.",
   });
 }

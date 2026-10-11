@@ -22,13 +22,14 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Contact Form Email
 
-The contact form sends mail through Hostinger's mail API. Add this environment variable before using `/contact`:
+The contact form sends mail through Google Workspace SMTP. Create a local `.env.local` file before using `/contact`:
 
 ```bash
-HOSTINGER_MAIL_API_TOKEN=your_hostinger_api_token
+EMAIL_USER=your-google-workspace-address@novanest.my
+EMAIL_PASS=your-google-workspace-app-password
 ```
 
-The API route resolves the managed mailbox automatically from Hostinger and sends messages to `support@novanest.my` by default.
+`EMAIL_PASS` must be a Google Workspace app password when 2-Step Verification is enabled. Restart the Next.js dev server after changing `.env.local`. Messages are sent to `support@novanest.my` by default, with the visitor's email configured as `Reply-To`.
 
 ## Learn More
 

@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -15,7 +17,7 @@ const services = [
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    mail: "",
     phone: "",
     service: "",
     message: "",
@@ -29,6 +31,18 @@ export function ContactForm() {
     type: "idle",
     message: "",
   });
+
+  useEffect(() => {
+    if (status.type === "idle") {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setStatus({ type: "idle", message: "" });
+    }, 2000);
+
+    return () => window.clearTimeout(timeout);
+  }, [status.type, status.message]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -44,16 +58,18 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setIsSubmitting(true);
     setStatus({ type: "idle", message: "" });
 
     try {
+      const submittedData = new FormData(form);
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(Object.fromEntries(submittedData.entries())),
       });
 
       const result = (await response.json()) as {
@@ -65,13 +81,8 @@ export function ContactForm() {
         throw new Error(result.error ?? "Something went wrong.");
       }
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
+      form.reset();
+      setFormData({ name: "", mail: "", phone: "", service: "", message: "" });
       setStatus({
         type: "success",
         message:
@@ -118,8 +129,8 @@ export function ContactForm() {
           <div>
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="mail"
+              value={formData.mail}
               onChange={handleChange}
               placeholder="Mail*"
               required
@@ -178,14 +189,17 @@ export function ContactForm() {
           </Button>
         </div>
 
-        {status.type !== "idle" ? (
-          <p
-            className={`text-sm ${status.type === "success" ? "text-emerald-600 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}
-            aria-live="polite"
-          >
-            {status.message}
-          </p>
-        ) : null}
+        {status.type !== "idle" && typeof document !== "undefined"
+          ? createPortal(
+              <Alert
+                variant={status.type}
+                className="fixed right-4 top-4 z-50 w-[calc(100%-2rem)] max-w-sm shadow-lg"
+              >
+                {status.message}
+              </Alert>,
+              document.body,
+            )
+          : null}
       </form>
     </div>
   );

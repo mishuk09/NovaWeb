@@ -34,7 +34,12 @@ export const serviceGroups = [
   },
   {
     category: "Business Infrastructure",
-    items: ["Domain Registration", "Hosting", "Business Email", "Website Maintenance"],
+    items: [
+      "Domain Registration",
+      "Hosting",
+      "Business Email",
+      "Website Maintenance",
+    ],
   },
   {
     category: "Growth & Automation",
@@ -51,8 +56,8 @@ export const serviceGroups = [
 export const contactChannels = [
   {
     label: "Phone",
-    value: "+60 11-1111 1111",
-    href: "tel:+601111111111",
+    value: "+60 1123654378",
+    href: "tel:+601123654378",
   },
   {
     label: "Email",
@@ -61,8 +66,8 @@ export const contactChannels = [
   },
   {
     label: "WhatsApp",
-    value: "+60 11-1111 1111",
-    href: "https://wa.me/601111111111",
+    value: "+60 1123654378",
+    href: "https://wa.me/601123654378",
   },
   {
     label: "Business Hours",
