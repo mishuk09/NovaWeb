@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { JsonLd } from "@/components/seo/json-ld";
-import { buildLocalBusinessSchema, metadataConfig } from "@/lib/seo";
+import {
+  buildLocalBusinessSchema,
+  buildOrganizationSchema,
+  buildWebsiteSchema,
+  metadataConfig,
+} from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -43,6 +48,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <JsonLd data={buildOrganizationSchema()} />
+        <JsonLd data={buildWebsiteSchema()} />
         <JsonLd data={buildLocalBusinessSchema()} />
       </body>
     </html>

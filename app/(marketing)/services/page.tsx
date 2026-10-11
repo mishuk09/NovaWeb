@@ -146,7 +146,7 @@ export default function ServicesPage() {
               Based in Melaka. Building for businesses across Malaysia.
             </p>
           </div>
-          
+
           <div className="relative mx-auto w-full max-w-lg rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
             <div className="mb-8 flex items-center justify-between border-b border-border pb-5">
               <span className="text-sm font-semibold">
@@ -252,6 +252,13 @@ export default function ServicesPage() {
                   >
                     {group.category}
                   </h2>
+                  <Link
+                    href={`/services/${detail.id}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Explore {group.category.toLowerCase()}
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </Link>
                   <p className="mt-5 leading-7 text-muted-foreground">
                     {detail.description}
                   </p>

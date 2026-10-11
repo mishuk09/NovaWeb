@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { serviceDetails } from "@/config/service-content";
 
 const routes = [
   "/",
@@ -17,11 +18,14 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return routes.map((route) => ({
+  const serviceRoutes = serviceDetails.map(
+    (service) => `/services/${service.slug}`,
+  );
+
+  return [...routes, ...serviceRoutes].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: now,
-    changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : 0.8,
+    changeFrequency: route === "/" || route === "/blog" ? "weekly" : "monthly",
+    priority: route === "/" ? 1 : route.startsWith("/services/") ? 0.9 : 0.8,
   }));
 }
-

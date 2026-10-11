@@ -8,6 +8,14 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
 import { PageHero } from "@/components/sections/common/page-hero";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Website Design and SEO Pricing",
+  description:
+    "Compare transparent website design, SEO, and digital growth packages for Malaysian small businesses. Get a clear scope and quote from NovaNest.",
+  pathname: "/pricing",
+});
 
 export default function PricingPage() {
   const cards = [

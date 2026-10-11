@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 
-export const defaultOgImage = `${siteConfig.url}/api/og`;
+export const defaultOgImage = `${siteConfig.url}/opengraph-image`;
 
 export const metadataConfig: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Digital Solutions Agency`,
-    template: `%s | ${siteConfig.name}`,
+    default: "NovaNest | Web Design & Automation Agency in Malaysia",
+    template: "%s | NovaNest Digital Agency",
   },
   description: siteConfig.description,
   keywords: [
@@ -18,20 +18,31 @@ export const metadataConfig: Metadata = {
     "automation agency",
   ],
   alternates: { canonical: "/" },
+  icons: {
+    icon: "/logo.svg",
+    apple: "/lightlogo.png",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Digital Solutions Agency`,
+    title: "NovaNest | Web Design & Automation Agency in Malaysia",
     description: siteConfig.description,
-    images: [{ url: defaultOgImage, width: 1200, height: 630, alt: siteConfig.name }],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "NovaNest Digital Solutions Agency",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Digital Solutions Agency`,
+    title: "NovaNest | Web Design & Automation Agency in Malaysia",
     description: siteConfig.description,
-    images: [defaultOgImage],
+    images: ["/twitter-image"],
   },
   category: "technology",
 };
@@ -59,12 +70,69 @@ export function createPageMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: `${title} | ${siteConfig.name}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteConfig.name}`,
       description,
+      images: ["/twitter-image"],
     },
+  };
+}
+
+export function buildOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
+    name: siteConfig.legalName,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/lightlogo.png`,
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
+    areaServed: siteConfig.serviceAreas,
+  };
+}
+
+export function buildWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    inLanguage: "en-MY",
+  };
+}
+
+export function buildServiceSchema({
+  name,
+  description,
+  pathname,
+}: {
+  name: string;
+  description: string;
+  pathname: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${siteConfig.url}${pathname}`,
+    provider: { "@id": `${siteConfig.url}/#organization` },
+    areaServed: siteConfig.serviceAreas,
+    serviceType: name,
   };
 }
 

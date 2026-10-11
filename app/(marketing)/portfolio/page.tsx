@@ -6,6 +6,14 @@ import { ProjectShowcase } from "@/components/shared/project-showcase";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { WhyChooseUsSection } from "@/components/sections/home/why-choose-us-section";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Website Design Portfolio",
+  description:
+    "Explore website design and digital experience projects created for Malaysian restaurants, salons, workshops, clinics, hotels, and professional services.",
+  pathname: "/portfolio",
+});
 
 export default async function PortfolioPage() {
   const projects = await getPortfolioProjects();
