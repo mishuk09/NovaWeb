@@ -83,8 +83,8 @@ export function SiteFooter() {
             <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-foreground">
               Payment Options
             </h3>
-            <ul className="mt-3 grid grid-cols-3 gap-2 sm:gap-3">
-              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-16">
+            <ul className="mt-3 grid grid-cols-4 gap-2 sm:gap-3">
+              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-12">
                 <Image
                   src="/banktransfer.png"
                   alt="Bank transfer"
@@ -93,7 +93,7 @@ export function SiteFooter() {
                   className="max-h-full w-full object-contain"
                 />
               </li>
-              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-16">
+              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-12">
                 <Image
                   src="/duitnow.png"
                   alt="DuitNow QR"
@@ -102,10 +102,19 @@ export function SiteFooter() {
                   className="max-h-full w-full object-contain"
                 />
               </li>
-              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-16">
+              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-12">
                 <Image
                   src="/touchandgo.webp"
                   alt="Touch 'n Go eWallet"
+                  width={750}
+                  height={280}
+                  className="max-h-full w-full object-contain"
+                />
+              </li>
+              <li className="flex h-14 items-center justify-center rounded-md border border-border/60 bg-background p-2 sm:h-12">
+                <Image
+                  src="/paypal.webp"
+                  alt="PayPal"
                   width={750}
                   height={280}
                   className="max-h-full w-full object-contain"
