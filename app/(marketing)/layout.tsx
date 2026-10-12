@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { BackToTop } from "@/components/site/back-to-top";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
@@ -17,6 +18,7 @@ export default function MarketingLayout({
       <HeroNavbar />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <BackToTop />
       <WhatsAppFloat />
       <Analytics />
     </div>
