@@ -1,4 +1,4 @@
-import { MessageCircleMore } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function WhatsAppFloat() {
@@ -10,8 +10,13 @@ export function WhatsAppFloat() {
       aria-label="Chat on WhatsApp"
       className="fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg transition hover:scale-105 hover:opacity-90"
     >
-      <MessageCircleMore className="h-6 w-6" />
+      <Image
+        src="/whatsapp.webp"
+        alt=""
+        width={24}
+        height={24}
+        className="h-8 w-8 object-contain"
+      />
     </a>
   );
 }
-
