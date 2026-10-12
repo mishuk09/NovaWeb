@@ -117,7 +117,8 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
               From your first website to a smarter, more connected business. We
-              help Malaysian SMEs build, run, and grow their presence online.
+              help SMEs in Malaysia and worldwide build, run, and grow their
+              presence online.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -143,7 +144,8 @@ export default function ServicesPage() {
               </Button>
             </div>
             <p className="mt-7 text-xs font-medium tracking-wide text-muted-foreground">
-              Based in Melaka. Building for businesses across Malaysia.
+              Based in Melaka. Building for businesses in Malaysia and
+              worldwide.
             </p>
           </div>
 

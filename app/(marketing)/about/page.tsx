@@ -25,7 +25,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "About novanest",
   description:
-    "Learn about novanest, our mission, values, and process for helping Malaysian businesses grow with premium digital solutions.",
+    "Learn about novanest, our mission, values, and process for helping businesses in Malaysia and worldwide grow with premium digital solutions.",
   pathname: "/about",
 });
 

@@ -51,8 +51,8 @@ export function WhyChooseUsSection() {
                 <CheckCircle2 className="h-6 w-6" />
               </div>
               <p className="text-sm font-medium leading-snug text-slate-900">
-                Helping Malaysian SMEs scale with high-converting digital
-                solutions.
+                Helping businesses in Malaysia and worldwide scale with
+                high-converting digital solutions.
               </p>
             </Card>
           </FadeUp>

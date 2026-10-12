@@ -2,9 +2,9 @@ export const serviceDetails = [
   {
     slug: "website-development",
     name: "Website Development",
-    title: "Website Development for Malaysian Businesses",
+    title: "Website Development for Malaysian and Global Businesses",
     description:
-      "NovaNest builds fast, mobile-first business websites, landing pages, portfolios, restaurant sites, booking websites, and e-commerce experiences for Malaysian SMEs.",
+      "NovaNest builds fast, mobile-first business websites, landing pages, portfolios, restaurant sites, booking websites, and e-commerce experiences for SMEs in Malaysia and worldwide.",
     intro:
       "Turn your first impression into your next opportunity with a website designed around trust, clarity, and measurable enquiries.",
     items: [

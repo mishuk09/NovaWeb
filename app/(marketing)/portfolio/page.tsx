@@ -11,7 +11,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Website Design Portfolio",
   description:
-    "Explore website design and digital experience projects created for Malaysian restaurants, salons, workshops, clinics, hotels, and professional services.",
+    "Explore website design and digital experience projects created for businesses in Malaysia and worldwide, including restaurants, salons, workshops, clinics, hotels, and professional services.",
   pathname: "/portfolio",
 });
 

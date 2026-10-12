@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   name: "novanest",
   legalName: "novanest Digital Solutions Agency",
   description:
-    "Modern digital solutions agency helping Malaysian SMEs grow with high-converting websites, SEO, automation, and lead generation systems.",
+    "Modern digital solutions agency helping businesses in Malaysia and worldwide grow with high-converting websites, SEO, automation, and lead generation systems.",
   url: siteUrl,
   locale: "en_MY",
   nav: [
@@ -32,5 +32,12 @@ export const siteConfig: SiteConfig = {
     { label: "Instagram", href: "https://instagram.com" },
     { label: "LinkedIn", href: "https://linkedin.com" },
   ],
-  serviceAreas: ["Melaka", "Kuala Lumpur", "Johor Bahru", "Penang", "Malaysia"],
+  serviceAreas: [
+    "Melaka",
+    "Kuala Lumpur",
+    "Johor Bahru",
+    "Penang",
+    "Malaysia",
+    "Worldwide",
+  ],
 };

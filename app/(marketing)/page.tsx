@@ -11,9 +11,9 @@ import { WhyChooseUsSection } from "@/components/sections/home/why-choose-us-sec
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Digital Solutions Agency for Malaysian SMEs",
+  title: "Digital Solutions Agency for Malaysia and Worldwide",
   description:
-    "novanest creates premium websites, SEO-ready digital experiences, and conversion systems for small businesses in Melaka and across Malaysia.",
+    "novanest creates premium websites, SEO-ready digital experiences, and conversion systems for small businesses in Malaysia and worldwide.",
   pathname: "/",
 });
 

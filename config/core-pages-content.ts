@@ -1,11 +1,11 @@
 export const aboutHighlights = [
   {
     title: "Mission",
-    text: "Help Malaysian SMEs compete with premium digital experiences that build trust and convert consistently.",
+    text: "Help businesses in Malaysia and worldwide compete with premium digital experiences that build trust and convert consistently.",
   },
   {
     title: "Vision",
-    text: "Become the most trusted growth-focused digital solutions agency for local businesses in Southeast Asia.",
+    text: "Become a trusted growth-focused digital solutions agency for businesses in Malaysia and worldwide.",
   },
   {
     title: "Approach",

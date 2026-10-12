@@ -23,7 +23,7 @@ export function SiteFooter() {
             {siteConfig.description}
           </p>
           <p className="mt-3 text-sm font-medium text-foreground">
-            Based in Melaka • Serving businesses across Malaysia
+            Based in Melaka • Serving businesses in Malaysia and worldwide
           </p>
         </div>
         <div>

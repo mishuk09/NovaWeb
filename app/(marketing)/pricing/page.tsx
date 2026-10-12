@@ -13,7 +13,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Website Design and SEO Pricing",
   description:
-    "Compare transparent website design, SEO, and digital growth packages for Malaysian small businesses. Get a clear scope and quote from NovaNest.",
+    "Compare transparent website design, SEO, and digital growth packages for small businesses in Malaysia and worldwide. Get a clear scope and quote from NovaNest.",
   pathname: "/pricing",
 });
 

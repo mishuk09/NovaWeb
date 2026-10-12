@@ -18,7 +18,7 @@ import { ContactForm } from "@/components/sections/contact/contact-form";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact novanest for website development, SEO, and digital growth services in Melaka and across Malaysia.",
+    "Contact novanest for website development, SEO, and digital growth services in Malaysia and worldwide.",
   pathname: "/contact",
 });
 

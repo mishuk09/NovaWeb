@@ -6,7 +6,8 @@ export const defaultOgImage = `${siteConfig.url}/opengraph-image`;
 export const metadataConfig: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "NovaNest | Web Design & Automation Agency in Malaysia",
+    default:
+      "NovaNest | Web Design & Automation Agency in Malaysia and Worldwide",
     template: "%s | NovaNest Digital Agency",
   },
   description: siteConfig.description,
@@ -16,6 +17,7 @@ export const metadataConfig: Metadata = {
     "business website malaysia",
     "seo malaysia",
     "automation agency",
+    "web design worldwide",
   ],
   alternates: { canonical: "/" },
   icons: {
@@ -27,7 +29,8 @@ export const metadataConfig: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "NovaNest | Web Design & Automation Agency in Malaysia",
+    title:
+      "NovaNest | Web Design & Automation Agency in Malaysia and Worldwide",
     description: siteConfig.description,
     images: [
       {
@@ -40,7 +43,8 @@ export const metadataConfig: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NovaNest | Web Design & Automation Agency in Malaysia",
+    title:
+      "NovaNest | Web Design & Automation Agency in Malaysia and Worldwide",
     description: siteConfig.description,
     images: ["/twitter-image"],
   },

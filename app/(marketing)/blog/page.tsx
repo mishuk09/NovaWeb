@@ -30,7 +30,7 @@ export default function BlogPage() {
             <h2 className="font-heading text-2xl font-semibold">Coming next</h2>
             <p className="mt-2 text-muted-foreground">
               We are preparing structured educational content for business
-              owners in Malaysia.
+              owners in Malaysia and worldwide.
             </p>
             <Button asChild className="mt-5">
               <Link href="/contact">Request content topics</Link>

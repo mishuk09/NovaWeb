@@ -62,7 +62,7 @@ export function PricingSection() {
       <Container className="relative space-y-10">
         <SectionHeading
           eyebrow="Pricing"
-          title="Simple Pricing for Malaysian Businesses."
+          title="Simple Pricing for Businesses in Malaysia and Worldwide."
           description="Choose the package that fits your business. Need something custom? We'll create a package based on your requirements."
         />
 
