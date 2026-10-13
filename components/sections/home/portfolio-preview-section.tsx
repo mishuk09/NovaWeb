@@ -15,7 +15,7 @@ export async function PortfolioPreviewSection() {
     >
       <SectionHeading
         eyebrow="Portfolio"
-        title="Demo projects crafted for industry-specific conversion."
+        title="Projects crafted for industry-specific conversion."
         description="Each demo is designed to reflect real customer journeys, trust factors, and lead generation goals."
       />
       <Container className="space-y-8 mt-10 md:space-y-10">

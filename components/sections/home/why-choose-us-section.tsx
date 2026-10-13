@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
-
+import Link from "next/link";
 export function WhyChooseUsSection() {
   return (
     <Section id="why-choose-us" className="bg-card/40 overflow-hidden  ">
@@ -114,9 +114,12 @@ export function WhyChooseUsSection() {
             </FadeUp>
 
             <FadeUp delay={0.4}>
-              <Button size="lg" className="rounded-lg flex mx-auto">
-                Get Free Quote <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Button
+            asChild
+            className="mx-auto mt-8 bg-primary text-white hover:bg-primary/90"
+          >
+            <Link href="/contact">Get Free Quote</Link>
+          </Button>
             </FadeUp>
           </div>
         </div>

@@ -19,10 +19,13 @@ export function HeroSection() {
       <DecorativeShapes />
       <Container className="relative grid pt-20 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <FadeUp className="space-y-6">
-          <p className="inline-flex      px-1  font-bold text-[var(--primary)]  ">
+          <p className="hidden md:inline-flex    text-center md:text-start  px-1  font-bold text-[var(--primary)]  ">
             {homeHero.badge}
           </p>
-          <h1 className="font-heading text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+          <p className="md:hidden text-center md:text-start  px-1  font-bold text-[var(--primary)]  ">
+           We care of your Business.
+          </p>
+          <h1 className="font-heading text-center sm:text-start text-3xl font-semibold leading-tight tracking-tight md:text-6xl">
             {homeHero.title}{" "}
             <span className="relative inline-block text-[var(--primary)] align-baseline leading-none">
               Growing
@@ -31,12 +34,12 @@ export function HeroSection() {
                 alt=""
                 width={40}
                 height={40}
-                className="absolute left-1/2 top-6 mt-1 h-auto w-70 -translate-x-1/2"
+                className="absolute left-1/2 top-3 md:top-6 mt-1 h-auto w-70 -translate-x-1/2"
               />
             </span>{" "}
             Businesses
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground">
+          <p className="max-w-2xl text-base text-center text-justify md:text-lg text-muted-foreground">
             {homeHero.description}
           </p>
           <div className="flex flex-wrap gap-3">
@@ -70,7 +73,7 @@ export function HeroSection() {
           <DecorativeShapes variant="frame" className="z-10" />
           <Card className="overflow-hidden border-0 bg-transparent p-0 shadow-none backdrop-blur-0">
             <Image
-              src="/home-img.svg"
+              src="/hero-img.svg"
               alt="Hero Image"
               width={960}
               height={720}

@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <br />
                 <span className="text-foreground">Company</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="max-w-2xl hidden md:block text-base text-center text-justify md:text-lg text-muted-foreground">
                 An IT firm or MSP that keeps your business running smoothly, so
                 you can focus on growth instead of chasing technical issues.
               </p>
@@ -149,12 +149,12 @@ export default function AboutPage() {
             </div>
             <div className="absolute left-[-0.5rem] top-1/2 z-20 w-fit -translate-y-1/2 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-4 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(37,99,235,0.35)]">
               <span className="inline-flex items-center gap-2">
-                <PhoneCall className="h-4 w-4" /> Contact us: +60 11-1111 1111
+                <PhoneCall className="h-4 w-4" /> Contact us: +60 1123654378
               </span>
             </div>
             <div className="relative z-10 aspect-[0.92] overflow-hidden rounded-lg   p-4   md:p-6">
               <Image
-                src="/home-img.svg"
+                src="/hero-img.svg"
                 alt="novanest about illustration"
                 fill
                 priority
